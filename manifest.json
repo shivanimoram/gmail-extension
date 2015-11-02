@@ -4,5 +4,12 @@
 "manifest_version": 2,
 "web_accessible_resources": ["*"],
 "permissions": ["<all_urls>", "tabs", "webRequest", "webRequestBlocking"],
-"version": "0.11.0.1"
+"version": "0.11.0.1",
+"oauth2": {
+"client_id": "497291774654.apps.googleusercontent.com",
+"scopes": ["https://mail.google.com/",
+"https://www.googleapis.com/auth/gmail.modify",
+"https://www.googleapis.com/auth/gmail.labels",
+"https://www.googleapis.com/auth/gmail.send"]
+  }
 }
