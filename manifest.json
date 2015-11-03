@@ -5,7 +5,7 @@
 "minimum_chrome_version": "29",
 "key": "AIzaSyC4i08lFNOYmx48lCiunLMV-KwnOey0vvw",
 "background": {
-"scripts": ["main.js"]
+"scripts": ["main.js"],
 }
 "web_accessible_resources": ["*"],
 "permissions": ["identity", "<all_urls>", "tabs", "webRequest", "webRequestBlocking", "https://accounts.google.com/*", "https://www.googleapis.com/*"],
