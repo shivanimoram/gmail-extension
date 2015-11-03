@@ -2,9 +2,13 @@
 "name": "Gmail Extension",
 "description": "Extension for tagging",
 "manifest_version": 2,
+"minimum_chrome_version": "29",
 "key": "AIzaSyC4i08lFNOYmx48lCiunLMV-KwnOey0vvw",
+"background": {
+"scripts": ["main.js"]
+}
 "web_accessible_resources": ["*"],
-"permissions": ["<all_urls>", "tabs", "webRequest", "webRequestBlocking", "https://accounts.google.com/*", "https://www.googleapis.com/*"],
+"permissions": ["identity", "<all_urls>", "tabs", "webRequest", "webRequestBlocking", "https://accounts.google.com/*", "https://www.googleapis.com/*"],
 "version": "0.11.0.1",
 "oauth2": {
 "client_id": "763145023672-pomd352gi79664h9tf0hg1uu160s4hop.apps.googleusercontent.com",
@@ -12,5 +16,5 @@
 "https://www.googleapis.com/auth/gmail.modify",
 "https://www.googleapis.com/auth/gmail.labels",
 "https://www.googleapis.com/auth/gmail.send"]
-  }
+}
 }
