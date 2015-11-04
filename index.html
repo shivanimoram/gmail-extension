@@ -1,0 +1,60 @@
+<html>
+<head>
+<script type="text/javascript">
+var CLIENT_ID = '763145023672-pomd352gi79664h9tf0hg1uu160s4hop.apps.googleusercontent.com';
+var API KEY = "AIzaSyC4i08lFNOYmx48lCiunLMV-KwnOey0vvw";
+var SCOPES = [
+'https://mail.google.com/',
+'https://www.googleapis.com/auth/gmail.modify',
+'https://www.googleapis.com/auth/gmail.labels',
+'https://www.googleapis.com/auth/gmail.send'
+ ];
+function handleClientLoad() {
+checkAuth();
+}
+function checkAuth() {
+gapi.auth.authorize({
+'client_id': CLIENT_ID, 'scope': SCOPES, 'immediate': true
+},
+handleAuthResult);
+}
+function handleAuthResult(authResult) {
+if (authResult) {
+} else {
+gapi.auth.authorize({
+'client_id': CLIENT_ID, 'scope': SCOPES, 'immediate': false},
+handleAuthResult);
+}
+}
+function init() {
+ gapi.client.setApiKey('AIzaSyC4i08lFNOYmx48lCiunLMV-KwnOey0vvw');
+ gapi.client.load('gmail', 'v1', listLabels);
+}
+function createLabels() {
+        var request = gapi.client.gmail.users.labels.create({
+          'userId': "me"
+        });
+request.execute(function(resp)
+function tagThreads() {
+	var label = GmailApp.getUserLabelByName("General");
+	var threads = label.getThreads();
+	for (var i=0; i<threads.length; i++) {
+		//add label "General" for selected threads
+		threads[i].addLabel(label);
+	}
+}
+function archiveInbox() {
+	var label1 = GmailApp.getUserLabelByName("Archived");
+var threads = GmailApp.search('label:inbox is:read +label:"General"');
+  for (var i = 0; i < threads.length; i++) {
+	  // add label "Archived" for the labels already tagged as "General"
+    threads[i].addLabel(label1);
+}
+});
+}
+</script>
+<script type="text/javascript" src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
+</head>
+<body>
+</body>
+</html>
